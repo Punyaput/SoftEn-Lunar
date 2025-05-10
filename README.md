@@ -8,19 +8,19 @@ Controller: The logic that connects the UI to the data, API calls from the front
 
 ⚠️ This project is not ready for production – it's a creative, educational skeleton prototype. <br><br>
 
-How to run the app on your local computer: <br>
+<h2> How to run the app on your local computer: </h2> <br>
 1. Clone this repository <br>
 >git clone https://github.com/yourusername/SoftEn-Lunar.git ) <br>
 2. Backend setup <br>
-- install all backend dependencies in backend directory (requires Python installed) <br>
+install all backend dependencies in backend directory (requires Python installed) <br>
 >pip install -r requirements.txt <br>
-- migrate data if possible <br>
+migrate data if possible <br>
 >python manage.py migrate <br>
-- run backend server locally <br>
+run backend server locally <br>
 >python manage.py runserver <br>
 3. Frontend setup <br>
-- install all frontend dependencies in frontend directory (requires Node installed) <br>
+install all frontend dependencies in frontend directory (requires Node installed) <br>
 >npm install <br>
-- run frontend server locally <br>
+run frontend server locally <br>
 >npm run dev <br>
 4. visit http://localhost:3000
