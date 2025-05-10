@@ -13,14 +13,14 @@ How to run the app on your local computer: <br>
 >git clone https://github.com/yourusername/SoftEn-Lunar.git ) <br>
 2. Backend setup <br>
 - install all backend dependencies in backend directory (requires Python installed) <br>
-...\backend>pip install -r requirements.txt <br>
+>pip install -r requirements.txt <br>
 - migrate data if possible <br>
-...\backend>python manage.py migrate <br>
+>python manage.py migrate <br>
 - run backend server locally <br>
-...\backend>python manage.py runserver <br>
+>python manage.py runserver <br>
 3. Frontend setup <br>
 - install all frontend dependencies in frontend directory (requires Node installed) <br>
-...\frontend>npm install <br>
+>npm install <br>
 - run frontend server locally <br>
-...\frontend>npm run dev <br>
+>npm run dev <br>
 4. visit http://localhost:3000
