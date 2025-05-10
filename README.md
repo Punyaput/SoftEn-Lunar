@@ -1,5 +1,5 @@
 # SoftEn Lunar
-<h1> SF222 Software Engineering Models and Analysis 🌑 | MVC Project <h1> <br>
+<h1> SF222 Software Engineering Models and Analysis 🌑 | MVC Project </h1> <br>
 Made with Django Backend & NextJS Frontend <br> <br>
 
 Model: The data and tables from Django models.py, with SQLite3 Ddatabase. <br>
