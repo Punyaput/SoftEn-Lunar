@@ -1,26 +1,43 @@
-# SoftEn Lunar
-<h2> SF222 Software Engineering Models and Analysis 🌑 | MVC Project </h2> <br>
-Made with Django Backend & NextJS Frontend <br> <br>
+# 🌑 SoftEn Lunar
 
-Model: The data and tables from Django models.py, with SQLite3 Ddatabase. <br>
-View: The user interface, NextJS components, pages, interactable elements. <br>
-Controller: The logic that connects the UI to the data, API calls from the frontend, talks to models, and returns data as JSON responses.
+## SF222 Software Engineering Models and Analysis – MVC Project
 
-⚠️ This project is not ready for production – it's a creative, educational skeleton prototype. <br><br>
+**SoftEn Lunar** is a creative e-commerce prototype selling fictional products.  
+Built using:  
+- 🐍 **Django** (Backend)  
+- ⚛️ **Next.js** (Frontend)  
 
-<h2> How to run the app on your local computer: </h2> <br>
-1. Clone this repository <br>
->git clone https://github.com/yourusername/SoftEn-Lunar.git ) <br>
-2. Backend setup <br>
-install all backend dependencies in backend directory (requires Python installed) <br>
+---
+
+### 🧩 MVC Architecture
+
+| Component   | Technology Used               | Description                                                                 |
+|------------|-------------------------------|-----------------------------------------------------------------------------|
+| **Model**  | `models.py` (Django ORM)      | Defines data models like Product, using SQLite3 as the database.           |
+| **View**   | React Components & Pages      | The user interface built with Next.js and styled using Tailwind.           |
+| **Controller** | Django Views / DRF APIs   | Handles logic and connects frontend to the backend via RESTful APIs.       |
+
+> ⚠️ This project is **not** ready for production – it's a creative educational skeleton.
+
+---
+
+## 🛠️ Local Development Setup
+
+Follow these steps to run the project locally:
+
+### 1. Clone the repository
+>git clone https://github.com/yourusername/SoftEn-Lunar.git
+
+### 2. Backend Setup (Python + Django)
+>cd backend <br>
 >pip install -r requirements.txt <br>
-migrate data if possible <br>
 >python manage.py migrate <br>
-run backend server locally <br>
->python manage.py runserver <br>
-3. Frontend setup <br>
-install all frontend dependencies in frontend directory (requires Node installed) <br>
+>python manage.py runserver
+
+### Step 3: Frontend Setup (Next.js)
+>cd frontend <br>
 >npm install <br>
-run frontend server locally <br>
->npm run dev <br>
-4. visit http://localhost:3000
+>npm run dev
+
+### Step 4: Access the App
+Visit http://localhost:3000
