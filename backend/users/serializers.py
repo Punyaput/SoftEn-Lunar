@@ -8,7 +8,7 @@ from orders.serializers import OrderSerializer
 # class UserSerializer(serializers.ModelSerializer):
 #     class Meta:
 #         model = CustomUser
-#         fields = ['id', 'username', 'email', 'sun_points']
+#         fields = ['id', 'username', 'email', 'moon_points']
 
 class UserProfileSerializer(serializers.ModelSerializer):
     avatar_url = serializers.SerializerMethodField()
@@ -19,10 +19,10 @@ class UserProfileSerializer(serializers.ModelSerializer):
         fields = [
             'id', 'username', 'email', 'first_name', 'last_name',
             'bio', 'avatar_url', 'phone_number', 'address',
-            'sun_points', 'total_co2_saved', 'total_energy_saved', 'streak_days',
+            'moon_points', 'total_co2_saved', 'total_energy_saved', 'streak_days',
             'recent_orders',
         ]
-        read_only_fields = ['username', 'sun_points', 'total_co2_saved', 'total_energy_saved']
+        read_only_fields = ['username', 'moon_points', 'total_co2_saved', 'total_energy_saved']
     
     def get_avatar_url(self, obj):
         if obj.avatar:

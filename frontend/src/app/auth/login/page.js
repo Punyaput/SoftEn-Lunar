@@ -38,7 +38,7 @@ export default function LoginPage() {
       <div className="auth-container">
         <div className="auth-header">
           <h1>Log In</h1>
-          <p>Access your SolarShop account</p>
+          <p>Access your SoftEn Lunar account</p>
         </div>
         <form onSubmit={handleLogin} className="auth-options">
           <input

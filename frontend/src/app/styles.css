@@ -1,11 +1,11 @@
 :root {
-  --sun-yellow: #FFD700;
-  --solar-orange: #FF8C00;
-  --leaf-green: #2E8B57;
-  --sky-blue: #87CEEB;
-  --earth-brown: #8B4513;
-  --white: #FFFFFF;
-  --light-bg: #FFF9F0;
+  --blue-moon: #0a0078;
+  --nebula-purple: #ac1ff8;
+  --deep-blue: #003fbe;
+  --sky-blue: #4400aa;
+  --pink-heart: #ff5bf4;
+  --white: #ffffff;
+  --light-bg: #ebdaff;
 }
 
 body {
@@ -19,7 +19,7 @@ body {
 
 /* Header Styles */
 .header {
-  background: linear-gradient(135deg, var(--sun-yellow), var(--solar-orange));
+  background: linear-gradient(135deg, var(--blue-moon), var(--nebula-purple));
   padding: 1rem 2rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   position: sticky;
@@ -45,7 +45,7 @@ body {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.sun-icon {
+.moon-icon {
   margin-right: 0.5rem;
   fill: var(--white);
 }
@@ -56,7 +56,7 @@ body {
 }
 
 .nav-link {
-  background-color: rgba(255, 99, 0, 0.3);
+  background-color: rgba(229, 81, 255, 0.3);
   color: var(--white);
   text-decoration: none;
   font-weight: 600;
@@ -77,7 +77,7 @@ body {
   position: absolute;
   top: -8px;
   right: -8px;
-  background-color: var(--leaf-green);
+  background-color: var(--deep-blue);
   color: white;
   border-radius: 50%;
   width: 20px;
@@ -90,7 +90,7 @@ body {
 
 /* Footer Styles */
 .footer {
-  background: linear-gradient(135deg, var(--leaf-green), var(--earth-brown));
+  background: linear-gradient(135deg, var(--deep-blue), var(--pink-heart));
   color: var(--white);
   padding: 2rem;
   margin-top: 2rem;
@@ -144,10 +144,10 @@ body {
   padding: 0 2rem;
 }
 
-/* Claim Sun Point Button */
+/* Claim Moon Point Button */
 .claim-btn {
-  background-color: var(--sun-yellow);
-  color: var(--earth-brown);
+  background-color: var(--blue-moon);
+  color: var(--pink-heart);
   border: none;
   padding: 0.8rem 1.5rem;
   font-size: 1rem;
@@ -159,7 +159,7 @@ body {
 }
 
 .claim-btn:hover {
-  background-color: var(--solar-orange);
+  background-color: var();
   transform: translateY(-2px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
@@ -194,7 +194,7 @@ body {
 .product-image {
   width: 100%;
   height: 300px;
-  object-fit: cover;
+  object-fit: con;
 }
 
 .product-details {
@@ -205,20 +205,20 @@ body {
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
-  color: var(--earth-brown);
+  color: var(--pink-heart);
 }
 
 .product-price {
   font-size: 1.1rem;
   font-weight: 700;
-  color: var(--solar-orange);
+  color: var();
   margin-bottom: 0.5rem;
 }
 
 .product-score {
   display: inline-block;
   padding: 0.3rem 0.6rem;
-  background-color: var(--leaf-green);
+  background-color: var(--deep-blue);
   color: white;
   border-radius: 4px;
   font-size: 0.9rem;
@@ -228,22 +228,22 @@ body {
 .hero-section {
   text-align: center;
   padding: 4rem 2rem;
-  background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 140, 0, 0.1));
+  background: linear-gradient(135deg, rgba(255, 103, 220, 0.1), rgba(255, 216, 45, 0.374));
   border-radius: 16px;
   margin-bottom: 3rem;
-  border: 2px dashed var(--sun-yellow);
+  border: 2px dashed var(--blue-moon);
 }
 
 .hero-section h1 {
   font-size: 2.5rem;
-  color: var(--leaf-green);
+  color: var(--deep-blue);
   margin-bottom: 1.5rem;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .hero-section p {
   font-size: 1.2rem;
-  color: var(--earth-brown);
+  color: var(--nebula-purple);
   max-width: 800px;
   margin: 0 auto 2rem;
 }
@@ -255,10 +255,10 @@ body {
 
 .featured-products h2 {
   font-size: 2rem;
-  color: var(--solar-orange);
+  color: var();
   margin-bottom: 2rem;
   padding-bottom: 0.5rem;
-  border-bottom: 3px solid var(--sun-yellow);
+  border-bottom: 3px solid var(--blue-moon);
   display: inline-block;
 }
 
@@ -267,7 +267,7 @@ body {
   text-align: center;
   padding: 2rem;
   font-size: 1.2rem;
-  color: var(--earth-brown);
+  color: var(--pink-heart);
 }
 
 .logout-btn {

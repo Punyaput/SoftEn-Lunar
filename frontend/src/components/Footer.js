@@ -1,14 +1,14 @@
 'use client';
 import Link from 'next/link';
-import { Leaf, Heart, Sun } from 'lucide-react';
+import { Leaf, Heart, Moon } from 'lucide-react';
 
 export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-left">
-          <Sun className="footer-icon" />
-          <span className="footer-text">CN334 Web Application Development ☀️</span>
+          <Moon className="footer-icon" />
+          <span className="footer-text">SF222 Software Engineering Models and Analysis 🌑 | MVC Project</span>
         </div>
 
         <div className="footer-right">
@@ -16,7 +16,7 @@ export default function Footer() {
             Made with Django and NextJS <Heart className="heart-icon" /> <Leaf className="leaf-icon" />
           </p>
           <p className="footer-description">
-            &copy; {new Date().getFullYear()} SoftEn Solar. All rights reserved.
+            &copy; {new Date().getFullYear()} SoftEn Lunar. All rights reserved.
           </p>
         </div>
       </div>

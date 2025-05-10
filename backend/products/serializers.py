@@ -8,8 +8,8 @@ class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
         fields = ['id', 'name', 'description', 'price', 
-                'sustainability_score', 'image_url', 
-                'solar_powered', 'created_at', 'stock']
+                 'image_url', 'lunar_score', 'cosmic_effects',
+                'lunar_powered', 'created_at', 'stock']
     
     def get_image_url(self, obj):
         if obj.image:

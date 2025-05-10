@@ -1,15 +1,17 @@
 // utils/api.js
 export async function fetchAPI(path, options = {}) {
-    const isServer = typeof window === 'undefined';
+    // const isServer = typeof window === 'undefined';
 
-    const baseURL = process.env.NEXT_PUBLIC_API_BASE_URL || (
-      isServer
-        ? 'http://backend:8000'  // Docker default
-        : 'http://localhost:8000' // Browser fallback for local dev
-    );
+    // const baseURL = process.env.NEXT_PUBLIC_API_BASE_URL || (
+    //   isServer
+    //     ? 'http://backend:8000'  // Docker default
+    //     : 'http://localhost:8000' // Browser fallback for local dev
+    // );
+
+    const baseURL = 'http://localhost:8000';
 
     const url = `${baseURL}${path}`;
-    console.log('🌐 ENV:', process.env.NEXT_PUBLIC_API_BASE_URL);
+    // console.log('🌐 ENV:', process.env.NEXT_PUBLIC_API_BASE_URL);
     console.log('🌐 Using baseURL:', baseURL);
 
     try {
@@ -31,7 +33,7 @@ export async function fetchAPI(path, options = {}) {
             // is related to the time window
             const data = await response.json();
             console.log(data.message)
-            if (data.message && data.message.includes('Sun Points can only be claimed between')) {
+            if (data.message && data.message.includes('Moon Points can only be claimed between')) {
                 throw new Error(data.message);
             }
 

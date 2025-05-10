@@ -5,7 +5,7 @@
   }
   
   .dashboard-page h1 {
-    color: var(--leaf-green);
+    color: var(--deep-blue);
     margin-bottom: 2rem;
     text-align: center;
   }
@@ -25,35 +25,39 @@
   
   .dashboard-card h2 {
     margin-top: 0;
-    color: var(--earth-brown);
+    color: var(--sky-blue);
     font-size: 1.3rem;
   }
+
+  .dashboard-card p {
+    color: var(--nebula-purple);
+  }
   
-  /* Sun Points Card */
-  .sun-points {
-    background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 140, 0, 0.2));
-    border: 2px solid var(--sun-yellow);
+  /* Moon Points Card */
+  .moon-points {
+    background: linear-gradient(135deg, rgba(0, 8, 158, 0.232), rgba(255, 0, 238, 0.253));
+    border: 2px solid var(--blue-moon);
   }
   
   .points {
     font-size: 3rem;
     font-weight: 700;
-    color: var(--solar-orange);
+    color: var();
     margin: 1rem 0 0.5rem;
     text-align: center;
   }
   
   .points-label {
     text-align: center;
-    color: var(--earth-brown);
+    color: var(--pink-heart);
     margin-bottom: 1.5rem;
   }
   
   .use-points-btn {
     display: block;
     text-align: center;
-    background-color: var(--sun-yellow);
-    color: var(--earth-brown);
+    background-color: var(--blue-moon);
+    color: var(--pink-heart);
     padding: 0.8rem;
     border-radius: 8px;
     text-decoration: none;
@@ -62,14 +66,14 @@
   }
   
   .use-points-btn:hover {
-    background-color: var(--solar-orange);
+    background-color: var(--nebula-purple);
     transform: translateY(-2px);
   }
   
   /* Impact Card */
   .impact {
-    background: linear-gradient(135deg, rgba(46, 139, 87, 0.2), rgba(139, 195, 74, 0.2));
-    border: 2px solid var(--leaf-green);
+    background: linear-gradient(135deg, rgba(0, 129, 141, 0.2), rgba(234, 199, 0, 0.2));
+    border: 2px solid var(--deep-blue);
   }
   
   .impact-metric {
@@ -80,37 +84,40 @@
     display: block;
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--leaf-green);
+    color: var(--deep-blue);
   }
   
   .metric-label {
-    color: var(--earth-brown);
+    color: var(--nebula-purple);
     font-size: 0.9rem;
   }
   
   /* Streak Card */
   .streak {
-    background: linear-gradient(135deg, rgba(255, 87, 34, 0.2), rgba(255, 152, 0, 0.2));
-    border: 2px solid var(--solar-orange);
+    background: linear-gradient(135deg, rgba(255, 34, 218, 0.2), rgba(85, 0, 137, 0.2));
+    border: 2px solid var(--nebula-purple);
   }
   
   .streak-days {
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--solar-orange);
+    color: var(--nebula-purple);
     margin: 1rem 0;
     text-align: center;
   }
   
   .streak-info {
     text-align: center;
-    color: var(--earth-brown);
+    color: var(--pink-heart);
     font-size: 0.9rem;
   }
   
   /* Orders Card */
   .recent-orders {
     border: 2px solid var(--sky-blue);
+  }
+  .recent-orders h2 {
+    color: black;
   }
   
   .order-list {
@@ -130,7 +137,7 @@
   
   .view-all {
     display: inline-block;
-    color: var(--leaf-green);
+    color: var(--deep-blue);
     text-decoration: none;
     font-weight: 600;
     font-size: 0.9rem;

@@ -10,16 +10,16 @@
     padding: 1rem;
     background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(46, 139, 87, 0.1));
     border-radius: 12px;
-    border: 2px dashed var(--sun-yellow);
+    border: 2px dashed var(--blue-moon);
   }
   
   .products-header h1 {
-    color: var(--leaf-green);
+    color: var(--deep-blue);
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
   }
   
   .products-header p {
-    color: var(--earth-brown);
+    color: var(--pink-heart);
     font-size: 1.1rem;
   }

@@ -10,7 +10,7 @@
   
   .not-implemented-box {
     background-color: #fff;
-    border: 2px solid var(--sun-yellow);
+    border: 2px solid var(--blue-moon);
     border-radius: 16px;
     padding: 3rem 2rem;
     max-width: 500px;
@@ -19,12 +19,12 @@
   
   .not-implemented-box h1 {
     font-size: 2rem;
-    color: var(--solar-orange);
+    color: var(--nebula-purple);
     margin-bottom: 1rem;
   }
   
   .not-implemented-box p {
-    color: var(--earth-brown);
+    color: var(--pink-heart);
     font-size: 1.1rem;
   }
   
@@ -32,6 +32,6 @@
     margin-top: 0.5rem;
     font-style: italic;
     font-size: 0.95rem;
-    color: var(--leaf-green);
+    color: var(--deep-blue);
   }
   

@@ -16,9 +16,9 @@ export default function ProductCard({ product }) {
           <h3 className="product-name">{product.name}</h3>
           <p className="product-description">{product.description}</p>
           <div className="product-footer">
-            <span className="product-price">${product.price}</span>
-            {product.solar_powered && (
-              <span className="badge solar-badge">☀️ Solar</span>
+            <span className="product-price">{product.price} THB</span>
+            {product.lunar_powered && (
+              <span className="badge lunar-badge">🌑 Lunar</span>
             )}
           </div>
         </div>

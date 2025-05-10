@@ -9,7 +9,7 @@ import { fetchAPI } from '@/utils/api';
 
 export default function CheckoutPage() {
   const { items, clearCart } = useCart();
-  const { user, sunPoints, refetchUser } = useUser();
+  const { user, moonPoints, refetchUser } = useUser();
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState(null);
@@ -38,11 +38,11 @@ export default function CheckoutPage() {
   }, [user]);
 
   useEffect(() => {
-    const maxUsablePoints = Math.min(sunPoints || 0, subtotal);
+    const maxUsablePoints = Math.min(moonPoints || 0, subtotal);
     const appliedPoints = Math.min(formData.pointsUsed, maxUsablePoints);
     setDiscount(appliedPoints);
     setFinalTotal(subtotal - appliedPoints);
-  }, [formData.pointsUsed, sunPoints, subtotal]);
+  }, [formData.pointsUsed, moonPoints, subtotal]);
 
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -71,7 +71,7 @@ export default function CheckoutPage() {
           product_id: item.id,
           quantity: item.quantity
         })),
-        sun_points_used: discount
+        moon_points_used: discount
       };
   
       const response = await fetchAPI('/api/orders/', {
@@ -119,7 +119,7 @@ export default function CheckoutPage() {
 
   return (
     <main className="checkout-page">
-      <h1>Complete Your Solar Purchase</h1>
+      <h1>Complete Your Lunar Purchase</h1>
       <div className="checkout-container">
         <div className="checkout-form">
           <h2>Shipping Information</h2>
@@ -186,12 +186,12 @@ export default function CheckoutPage() {
           <div className="summary-totals">
             <div className="summary-row"><span>Subtotal</span><span>${subtotal}</span></div>
             <div className="summary-row"><span>Shipping</span><span>Free</span></div>
-            <div className="summary-row"><span>Sun Points</span><span>– ${discount}</span></div>
+            <div className="summary-row"><span>moon Points</span><span>– ${discount}</span></div>
             <div className="summary-row total"><span>Total</span><span>${finalTotal}</span></div>
           </div>
 
-          <div className="sun-points-apply">
-            <h3>Apply Sun Points</h3>
+          <div className="moon-points-apply">
+            <h3>Apply Moon Points</h3>
             <div className="points-input">
               <input
                 type="number"
@@ -199,12 +199,12 @@ export default function CheckoutPage() {
                 value={formData.pointsUsed}
                 onChange={handleChange}
                 min="0"
-                max={Math.min(subtotal, sunPoints || 0)}
+                max={Math.min(subtotal, moonPoints || 0)}
               />
               <button type="button" onClick={() => {}}>Apply</button>
             </div>
             <p className="points-info">
-              You have {sunPoints ?? 0} sun points available (${sunPoints ?? 0} discount)
+              You have {moonPoints ?? 0} Moon points available (${moonPoints ?? 0} discount)
             </p>
           </div>
         </div>

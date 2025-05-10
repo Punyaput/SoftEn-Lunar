@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'users',
     'orders',
     'payments',
-    'sustainability',
 ]
 
 REST_FRAMEWORK = {

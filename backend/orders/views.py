@@ -65,10 +65,10 @@ class OrderCreateView(generics.CreateAPIView):
                 except (Product.DoesNotExist, KeyError, ValueError) as e:
                     raise ValidationError(f'Invalid product data: {str(e)}')
 
-            # Process sun points
+            # Process moon points
             points_used = min(
-                user.sun_points,
-                max(0, int(data.get('sun_points_used', 0))
+                user.moon_points,
+                max(0, int(data.get('moon_points_used', 0))
             ))
             discount = float(points_used)
             
@@ -82,7 +82,7 @@ class OrderCreateView(generics.CreateAPIView):
                 'subtotal': subtotal,
                 'shipping_cost': shipping_cost,
                 'tax': tax,
-                'sun_points_used': points_used,
+                'moon_points_used': points_used,
                 'discount_from_points': discount,
                 'total': total
             })
@@ -105,10 +105,10 @@ class OrderCreateView(generics.CreateAPIView):
                 item['product'].stock -= item['quantity']
                 item['product'].save()
             
-            # Deduct sun points if used
+            # Deduct moon points if used
             if points_used > 0:
-                user.sun_points -= points_used
-                user.save(update_fields=['sun_points'])
+                user.moon_points -= points_used
+                user.save(update_fields=['moon_points'])
             
             response_serializer = self.get_serializer(order)
             return Response(response_serializer.data, status=status.HTTP_201_CREATED)

@@ -13,7 +13,7 @@ class OrderTests(APITestCase):
             username='testuser',
             email='test@example.com',
             password='testpass123',
-            sun_points=100
+            moon_points=100
         )
         self.product = Product.objects.create(
             name='Test Product',
@@ -38,13 +38,13 @@ class OrderTests(APITestCase):
                     "quantity": 2
                 }
             ],
-            "sun_points_used": 10
+            "moon_points_used": 10
         }
 
     def test_create_order(self):
         url = reverse('order-create')
         response = self.client.post(url, self.valid_payload, format='json')
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
-        self.assertEqual(self.user.sun_points, 90)  # 100 - 10 used
+        self.assertEqual(self.user.moon_points, 90)  # 100 - 10 used
         self.product.refresh_from_db()
         self.assertEqual(self.product.stock, 8)  # 10 - 2 ordered

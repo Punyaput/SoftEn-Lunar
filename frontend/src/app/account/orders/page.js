@@ -8,8 +8,8 @@ export default function OrdersPage() {
     <main className="not-implemented-page">
       <div className="not-implemented-box">
         <h1>🚧 Not Implemented Yet</h1>
-        <p>This feature is still charging up under the solar panels.</p>
-        <p className="hint">Check back soon for a radiant update! ☀️</p>
+        <p>This feature is still charging up under the lunar magics.</p>
+        <p className="hint">Check back soon for an update!</p>
       </div>
     </main>
   );

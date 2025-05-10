@@ -46,7 +46,7 @@ export default function SignupPage() {
       <div className="auth-container">
         <div className="auth-header">
           <h1>Sign Up</h1>
-          <p>Create your SolarShop account</p>
+          <p>Create your SoftEn Lunar account</p>
         </div>
         <form onSubmit={handleSignup} className="auth-options">
           <input

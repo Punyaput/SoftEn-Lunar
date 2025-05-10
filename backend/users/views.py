@@ -14,32 +14,32 @@ class UserDetailView(generics.RetrieveAPIView):
     def get_object(self):
         return self.request.user
 
-class ClaimSunPointView(APIView):
+class ClaimMoonPointView(APIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def post(self, request):
         user = request.user
         current_hour = timezone.now().hour
         
-        # Allow claiming only between 8AM and 9AM
+        # Allow claiming only between 8PM and 9PM
         if 8 <= current_hour < 9:
-            claimed, bonus = user.claim_sun_point()
+            claimed, bonus = user.claim_moon_point()
             if claimed:
                 return Response({
-                    'message': f'Sun Point claimed! {f"+{bonus} bonus" if bonus else ""}',
-                    'sun_points': user.sun_points,
+                    'message': f'moon Point claimed! {f"+{bonus} bonus" if bonus else ""}',
+                    'moon_points': user.moon_points,
                     'streak_days': user.streak_days,
                     'bonus': bonus
                 }, status=status.HTTP_200_OK)
             return Response({
-                'message': 'You already claimed your Sun Point today.',
-                'sun_points': user.sun_points,
+                'message': 'You already claimed your moon Point today.',
+                'moon_points': user.moon_points,
                 'streak_days': user.streak_days,
             }, status=status.HTTP_400_BAD_REQUEST)
         
         return Response({
-            'message': 'Sun Points can only be claimed between 8:00 AM and 9:00 AM.',
-            'sun_points': user.sun_points,
+            'message': 'Moon Points can only be claimed between 8:00 PM and 9:00 PM.',
+            'moon_points': user.moon_points,
             'streak_days': user.streak_days,
         }, status=status.HTTP_400_BAD_REQUEST)
 
@@ -79,10 +79,10 @@ def whoami(request):
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
-def sun_point_status(request):
+def moon_point_status(request):
     user = request.user
     today = timezone.now().date()
-    last_claim = user.last_sun_point_claim
+    last_claim = user.last_moon_point_claim
     streak = user.streak_days
 
     already_claimed = last_claim == today
@@ -102,7 +102,7 @@ def sun_point_status(request):
         bonus = 1
 
     return Response({
-        'sun_points': user.sun_points,
+        'moon_points': user.moon_points,
         'already_claimed': already_claimed,
         'streak_days': streak,
         'potential_bonus': bonus,

@@ -37,7 +37,7 @@
   
   .product-info h1 {
     font-size: 2rem;
-    color: var(--earth-brown);
+    color: var(--pink-heart);
     margin: 0;
   }
   
@@ -47,17 +47,17 @@
     flex-wrap: wrap;
   }
   
-  .sustainability-badge {
-    background-color: var(--leaf-green);
+  .Moony-badge {
+    background-color: var(--deep-blue);
     color: white;
     padding: 0.4rem 0.8rem;
     border-radius: 50px;
     font-size: 0.9rem;
   }
   
-  .solar-badge {
-    background-color: var(--sun-yellow);
-    color: var(--earth-brown);
+  .lunar-badge {
+    background-color: var(--blue-moon);
+    color: var(--pink-heart);
     padding: 0.4rem 0.8rem;
     border-radius: 50px;
     font-size: 0.9rem;
@@ -66,7 +66,7 @@
   .price {
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--solar-orange);
+    color: var(--nebula-purple);
     margin: 0;
   }
   
@@ -79,11 +79,11 @@
     background-color: rgba(46, 139, 87, 0.1);
     padding: 1.5rem;
     border-radius: 8px;
-    border-left: 4px solid var(--leaf-green);
+    border-left: 4px solid var(--deep-blue);
   }
   
   .impact-section h3 {
-    color: var(--leaf-green);
+    color: var(--deep-blue);
     margin-top: 0;
     margin-bottom: 1rem;
   }
@@ -99,8 +99,8 @@
 
   .add-to-cart-btn {
     padding: 0.8rem 1.5rem;
-    background-color: var(--sun-yellow);
-    color: var(--earth-brown);
+    background-color: var(--blue-moon);
+    color: var(--pink-heart);
     border: none;
     border-radius: 50px;
     font-weight: 600;
@@ -111,7 +111,7 @@
   }
   
   .add-to-cart-btn:hover {
-    background-color: var(--solar-orange);
+    background-color: var(--nebula-purple);
     transform: translateY(-2px);
   }
 

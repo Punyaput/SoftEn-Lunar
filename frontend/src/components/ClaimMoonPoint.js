@@ -1,10 +1,10 @@
-// components/ClaimSunPoint.js
+// components/ClaimMoonPoint.js
 'use client';
 import { useState } from 'react';
-import './claim-sun-point.css';
+import './claim-moon-point.css';
 import { fetchAPI } from '@/utils/api';
 
-export default function ClaimSunPoint({ onClaim }) {
+export default function ClaimmoonPoint({ onClaim }) {
   const [message, setMessage] = useState('');
   const [isClaiming, setIsClaiming] = useState(false);
 
@@ -16,7 +16,7 @@ export default function ClaimSunPoint({ onClaim }) {
       const token = localStorage.getItem('access');
       
       // Using fetchAPI to make the POST request
-      const data = await fetchAPI(`/api/users/claim-sun-point/`, {
+      const data = await fetchAPI(`/api/users/claim-moon-point/`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -29,12 +29,12 @@ export default function ClaimSunPoint({ onClaim }) {
         setMessage(data.message);
         if (onClaim) onClaim();
       } else {
-        setMessage(data.message || 'Failed to claim Sun Point');
+        setMessage(data.message || 'Failed to claim Moon Point');
       }
     } catch (error) {
       // Handle specific message in case of time-based error or network issues
-      if (error.message.includes('Sun Points can only be claimed between')) {
-        setMessage('Sun Points can only be claimed between 8 AM and 9 AM.');
+      if (error.message.includes('Moon Points can only be claimed between')) {
+        setMessage('Moon Points can only be claimed between 8 PM and 9 PM.');
       } else {
         setMessage('Network error or bad request. Please try again.');
       }
@@ -50,7 +50,7 @@ export default function ClaimSunPoint({ onClaim }) {
         disabled={isClaiming}
         className="claim-btn"
       >
-        {isClaiming ? 'Claiming...' : 'Claim Sun Point'}
+        {isClaiming ? 'Claiming...' : 'Claim Moon Point'}
       </button>
       {message && (
         <p 

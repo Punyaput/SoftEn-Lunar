@@ -1,7 +1,7 @@
 // app/account/dashboard/page.js
 'use client';
 import { useUser } from '@/hooks/useUser';
-import ClaimSunPoint from '@/components/ClaimSunPoint';
+import ClaimMoonPoint from '@/components/ClaimMoonPoint';
 import './dashboard.css';
 import { useState, useEffect } from 'react';
 import { fetchAPI } from '@/utils/api';
@@ -10,7 +10,7 @@ export default function DashboardPage() {
   const { 
     user, 
     username, 
-    sunPoints, 
+    moonPoints, 
     streakDays, 
     co2Reduced, 
     energyGenerated, 
@@ -24,7 +24,7 @@ export default function DashboardPage() {
       <main className="dashboard-page">
         <div className="loading-spinner">
           <div className="spinner"></div>
-          <p>Loading your solar data...</p>
+          <p>Loading your lunar data...</p>
         </div>
       </main>
     );
@@ -46,36 +46,36 @@ export default function DashboardPage() {
 
   return (
     <main className="dashboard-page">
-      <h1>Welcome Back, {username || 'Solar Champion'}!</h1>
+      <h1>Welcome Back, {username || 'Lunar Champion'}!</h1>
       
       <div className="dashboard-grid">
-        <div className="dashboard-card sun-points">
-          <h2>☀️ Your Sun Points</h2>
-          <p className="points">{sunPoints}</p>
+        <div className="dashboard-card moon-points">
+          <h2>🌒 Your Moon Points</h2>
+          <p className="points">{moonPoints}</p>
           <p className="points-label">Available Points</p>
-          <ClaimSunPoint onClaim={refetch} />
+          <ClaimMoonPoint onClaim={refetch} />
           <a href="/store/products" className="use-points-btn">
             Use Points for Discounts
           </a>
         </div>
         
         <div className="dashboard-card impact">
-          <h2>🌱 Your Environmental Impact</h2>
+          <h2>🌚 Your Lunar Stats</h2>
           <div className="impact-metric">
             <span className="metric-value">{co2Reduced} kg</span>
-            <span className="metric-label">CO2 Reduced</span>
+            <span className="metric-label">Lunar Dust</span>
           </div>
           <div className="impact-metric">
             <span className="metric-value">{energyGenerated} kWh</span>
-            <span className="metric-label">Energy Generated</span>
+            <span className="metric-label">Moonlight Power</span>
           </div>
         </div>
         
         <div className="dashboard-card streak">
-          <h2>🔥 Current Streak</h2>
+          <h2>🌕 Current Streak</h2>
           <p className="streak-days">{streakDays} days</p>
           <p className="streak-info">
-            Check in tomorrow at 8-9AM to keep your streak!
+            Check in tomorrow at 8-9PM to keep your streak!
           </p>
         </div>
         

@@ -81,7 +81,7 @@ export function useUser() {
     refetch: fetchUser,
     logout,
     username: user?.username || null,
-    sunPoints: user?.sun_points || 0,
+    moonPoints: user?.moon_points || 0,
     streakDays: user?.streak_days || 0,
     co2Reduced: user?.total_co2_saved || 0,
     energyGenerated: user?.total_energy_saved || 0

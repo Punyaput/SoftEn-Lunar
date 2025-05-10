@@ -5,7 +5,7 @@
   }
   
   .checkout-page h1 {
-    color: var(--leaf-green);
+    color: var(--deep-blue);
     text-align: center;
     margin-bottom: 2rem;
   }
@@ -30,10 +30,14 @@
   }
   
   .checkout-form h2 {
-    color: var(--leaf-green);
+    color: var(--deep-blue);
     margin-top: 0;
     margin-bottom: 1.5rem;
     font-size: 1.5rem;
+  }
+
+  .checkout-form label {
+    color: var(--nebula-purple);
   }
   
   .form-group {
@@ -43,7 +47,7 @@
   .form-group label {
     display: block;
     margin-bottom: 0.5rem;
-    color: var(--earth-brown);
+    color: var(--nebula-purple);
     font-weight: 500;
   }
   
@@ -91,7 +95,7 @@
   }
   
   .payment-option:hover {
-    border-color: var(--leaf-green);
+    border-color: var(--deep-blue);
   }
   
   .payment-option input {
@@ -101,7 +105,7 @@
   .submit-order-btn {
     width: 100%;
     padding: 1rem;
-    background-color: var(--leaf-green);
+    background-color: var(--deep-blue);
     color: white;
     border: none;
     border-radius: 8px;
@@ -112,7 +116,7 @@
   }
   
   .submit-order-btn:hover {
-    background-color: var(--solar-orange);
+    background-color: var(--nebula-purple);
     transform: translateY(-2px);
   }
   
@@ -127,7 +131,7 @@
   }
   
   .order-summary h2 {
-    color: var(--leaf-green);
+    color: var(--deep-blue);
     margin-top: 0;
     margin-bottom: 1.5rem;
     font-size: 1.5rem;
@@ -161,12 +165,12 @@
   .order-item .item-details h3 {
     margin: 0 0 0.5rem;
     font-size: 1rem;
-    color: var(--earth-brown);
+    color: var(--pink-heart);
   }
   
   .order-item .item-details p {
     margin: 0;
-    color: var(--solar-orange);
+    color: var(--nebula-purple);
     font-weight: 600;
   }
   
@@ -188,17 +192,17 @@
     border-top: 2px solid #eee;
   }
   
-  .sun-points-apply {
+  .moon-points-apply {
     background-color: rgba(255, 215, 0, 0.1);
     padding: 1.5rem;
     border-radius: 8px;
-    border: 1px dashed var(--sun-yellow);
+    border: 1px dashed var(--blue-moon);
     margin-top: 2rem;
   }
   
-  .sun-points-apply h3 {
+  .moon-points-apply h3 {
     margin-top: 0;
-    color: var(--earth-brown);
+    color: var(--pink-heart);
   }
   
   .points-input {
@@ -215,8 +219,8 @@
   }
   
   .points-input button {
-    background-color: var(--sun-yellow);
-    color: var(--earth-brown);
+    background-color: var(--blue-moon);
+    color: var(--pink-heart);
     border: none;
     border-radius: 6px;
     padding: 0 1.5rem;
@@ -226,11 +230,11 @@
   }
   
   .points-input button:hover {
-    background-color: var(--solar-orange);
+    background-color: var(--nebula-purple);
   }
   
   .points-info {
     font-size: 0.9rem;
-    color: var(--earth-brown);
+    color: var(--pink-heart);
     margin: 0;
   }

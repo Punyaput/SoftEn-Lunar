@@ -14,7 +14,7 @@
     padding: 3rem 2rem;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     text-align: center;
-    border: 2px solid var(--sun-yellow);
+    border: 2px solid var(--blue-moon);
   }
   
   .auth-options input {
@@ -29,13 +29,13 @@
   }
   
   .auth-header h1 {
-    color: var(--leaf-green);
+    color: var(--deep-blue);
     margin: 0 0 1rem;
     font-size: 2rem;
   }
   
   .auth-header p {
-    color: var(--earth-brown);
+    color: var(--pink-heart);
     margin: 0;
   }
   
@@ -59,12 +59,12 @@
   }
   
   .auth-btn.primary {
-    background-color: var(--sun-yellow);
-    color: var(--earth-brown);
+    background-color: var(--blue-moon);
+    color: var(--pink-heart);
   }
   
   .auth-btn.primary:hover {
-    background-color: var(--solar-orange);
+    background-color: var(--nebula-purple);
     transform: translateY(-2px);
   }
   
@@ -89,11 +89,11 @@
   }
   
   .auth-footer {
-    color: var(--earth-brown);
+    color: var(--pink-heart);
   }
   
   .auth-footer a {
-    color: var(--leaf-green);
+    color: var(--deep-blue);
     text-decoration: none;
     font-weight: 600;
   }

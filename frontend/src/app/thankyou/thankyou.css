@@ -10,7 +10,7 @@
   
   .thank-you-box {
     background-color: #fff;
-    border: 2px solid var(--sun-yellow);
+    border: 2px solid var(--blue-moon);
     border-radius: 16px;
     padding: 3rem 2rem;
     max-width: 500px;
@@ -19,18 +19,18 @@
   
   .thank-you-box h1 {
     font-size: 2rem;
-    color: var(--solar-orange);
+    color: var(--nebula-purple);
     margin-bottom: 1rem;
   }
   
   .thank-you-box p {
-    color: var(--earth-brown);
+    color: var(--pink-heart);
     font-size: 1.1rem;
     margin-bottom: 2rem;
   }
   
   .thank-you-box button {
-    background-color: var(--leaf-green);
+    background-color: var(--deep-blue);
     color: white;
     border: none;
     padding: 0.75rem 1.5rem;

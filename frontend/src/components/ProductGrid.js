@@ -43,7 +43,7 @@ export default function ProductGrid() {
             <h3 className="product-title">{product.name}</h3>
             <p className="product-price">{product.price} THB</p>
             <span className="product-score">
-              Eco Score: {product.sustainability_score}/100
+              Lunar Product
             </span>
           </div>
         </Link>

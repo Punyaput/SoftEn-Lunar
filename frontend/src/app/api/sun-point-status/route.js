@@ -3,7 +3,7 @@ import { fetchAPI } from '@/utils/api';
 
 export async function GET() {
   try {
-    const djangoResponse = await fetchAPI(`/api/users/sun-point-status/`);
+    const djangoResponse = await fetchAPI(`/api/users/moon-point-status/`);
     const data = await djangoResponse.json();
     return NextResponse.json(data);
   } catch (error) {

@@ -23,7 +23,6 @@ class Migration(migrations.Migration):
                 ('updated_at', models.DateTimeField(auto_now=True)),
                 ('status', models.CharField(choices=[('pending', 'Pending'), ('paid', 'Paid'), ('shipped', 'Shipped'), ('delivered', 'Delivered'), ('cancelled', 'Cancelled')], default='pending', max_length=20)),
                 ('total', models.DecimalField(decimal_places=2, max_digits=10)),
-                ('sun_points_used', models.PositiveIntegerField(default=0)),
                 ('discount_from_points', models.DecimalField(decimal_places=2, default=0, max_digits=10)),
                 ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],

@@ -15,13 +15,13 @@ export default function CartPage() {
 
   return (
     <main className="cart-page">
-      <h1>Your Solar Shopping Cart</h1>
+      <h1>Your Lunar Shopping Cart</h1>
       
       {items.length === 0 ? (
         <div className="empty-cart">
           <p>Your cart is empty</p>
           <a href="/store/products" className="shop-link">
-            Browse Solar Products
+            Browse Lunar Products
           </a>
         </div>
       ) : (
@@ -38,7 +38,7 @@ export default function CartPage() {
                 />
                 <div className="item-details">
                   <h3>{item.name}</h3>
-                  <p>${item.price}</p>
+                  <p>{item.price} THB</p>
                   <div className="quantity-controls">
                     <button 
                       onClick={() => updateQuantity(item.id, item.quantity - 1)}
@@ -66,7 +66,7 @@ export default function CartPage() {
             <h2>Order Summary</h2>
             <div className="summary-row">
               <span>Subtotal</span>
-              <span>${total}</span>
+              <span>{total} THB</span>
             </div>
             <div className="summary-row">
               <span>Shipping</span>
@@ -74,7 +74,7 @@ export default function CartPage() {
             </div>
             <div className="summary-row total">
               <span>Total</span>
-              <span>${total}</span>
+              <span>{total} THB</span>
             </div>
             <button className="checkout-btn" onClick={goToCheckout}>
               Proceed to Checkout

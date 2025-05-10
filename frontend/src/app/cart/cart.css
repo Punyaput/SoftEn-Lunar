@@ -5,7 +5,7 @@
   }
   
   .cart-page h1 {
-    color: var(--leaf-green);
+    color: var(--deep-blue);
     text-align: center;
     margin-bottom: 2rem;
   }
@@ -15,19 +15,19 @@
     padding: 3rem;
     background-color: rgba(255, 215, 0, 0.1);
     border-radius: 12px;
-    border: 2px dashed var(--sun-yellow);
+    border: 2px dashed var(--blue-moon);
   }
   
   .empty-cart p {
     font-size: 1.2rem;
-    color: var(--earth-brown);
+    color: var(--pink-heart);
     margin-bottom: 1.5rem;
   }
   
   .shop-link {
     display: inline-block;
-    background-color: var(--sun-yellow);
-    color: var(--earth-brown);
+    background-color: var(--blue-moon);
+    color: var(--pink-heart);
     padding: 0.8rem 1.5rem;
     border-radius: 50px;
     text-decoration: none;
@@ -36,7 +36,7 @@
   }
   
   .shop-link:hover {
-    background-color: var(--solar-orange);
+    background-color: var(--nebula-purple);
     transform: translateY(-2px);
   }
   
@@ -81,13 +81,13 @@
   
   .item-details h3 {
     margin: 0 0 0.5rem;
-    color: var(--earth-brown);
+    color: var(--pink-heart);
   }
   
   .item-details p {
     margin: 0 0 1rem;
     font-weight: 600;
-    color: var(--solar-orange);
+    color: var(--nebula-purple);
   }
   
   .quantity-controls {
@@ -100,7 +100,7 @@
     width: 30px;
     height: 30px;
     border: none;
-    background-color: var(--leaf-green);
+    background-color: var(--deep-blue);
     color: white;
     border-radius: 4px;
     font-size: 1rem;
@@ -132,7 +132,7 @@
   }
   
   .remove-btn:hover {
-    color: var(--solar-orange);
+    color: var(--nebula-purple);
   }
   
   .cart-summary {
@@ -148,7 +148,7 @@
   .cart-summary h2 {
     margin-top: 0;
     margin-bottom: 1.5rem;
-    color: var(--leaf-green);
+    color: var(--deep-blue);
     font-size: 1.5rem;
   }
   
@@ -171,7 +171,7 @@
   .checkout-btn {
     width: 100%;
     padding: 1rem;
-    background-color: var(--leaf-green);
+    background-color: var(--deep-blue);
     color: white;
     border: none;
     border-radius: 50px;
@@ -182,7 +182,7 @@
   }
   
   .checkout-btn:hover {
-    background-color: var(--solar-orange);
+    background-color: var(--nebula-purple);
     transform: translateY(-2px);
   }
   

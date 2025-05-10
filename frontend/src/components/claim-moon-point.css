@@ -1,12 +1,12 @@
-/* claim-sun-point.css */
+/* claim-moon-point.css */
 .claim-container {
     margin: 1.5rem 0 1rem;
     text-align: center;
   }
   
   .claim-btn {
-    background: linear-gradient(135deg, var(--sun-yellow), var(--solar-orange));
-    color: var(--earth-brown);
+    background: linear-gradient(135deg, var(--blue-moon), var(--nebula-purple));
+    color: var(--pink-heart);
     border: none;
     padding: 0.8rem 1.8rem;
     border-radius: 12px;
@@ -53,8 +53,8 @@
   
   .status-success {
     background-color: rgba(46, 139, 87, 0.1);
-    color: var(--leaf-green);
-    border: 1px solid var(--leaf-green);
+    color: var(--deep-blue);
+    border: 1px solid var(--deep-blue);
   }
   
   .status-error {
@@ -67,8 +67,8 @@
     display: inline-block;
     margin-top: 0.5rem;
     padding: 0.3rem 0.6rem;
-    background-color: var(--sun-yellow);
-    color: var(--earth-brown);
+    background-color: var(--blue-moon);
+    color: var(--pink-heart);
     border-radius: 50px;
     font-size: 0.8rem;
     font-weight: 600;

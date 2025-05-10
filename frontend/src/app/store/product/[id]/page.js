@@ -13,8 +13,8 @@ async function getProduct(id) {
 }
 
 export default async function ProductDetailPage({ params }) {
-  // Directly use params.id in the async function
-  const product = await getProduct(params.id);
+  const paramsawaiter = await params
+  const product = await getProduct(paramsawaiter.id);
 
   return (
     <main className="product-detail-page">
@@ -33,25 +33,29 @@ export default async function ProductDetailPage({ params }) {
           <h1>{product.name}</h1>
           
           <div className="badges">
-            <span className="sustainability-badge">
-              Sustainability: {product.sustainability_score}/100
+            <span className="Moony-badge">
+              Lunar Product
             </span>
-            {product.solar_powered && (
-              <span className="solar-badge">☀️ Solar Powered</span>
+            {product.Lunar_powered && (
+              <span className="Lunar-badge">🌑 Made on the Moon</span>
             )}
           </div>
           
-          <p className="price">${product.price}</p>
+          <p className="price">{product.price} THB</p>
           <p className="description">{product.description}</p>
           
           <AddToCart product={product} />
           
           <div className="impact-section">
-            <h3>Environmental Impact</h3>
+            <h3>Cosmic Effects</h3>
             <ul className="impact-list">
-              <li>Reduces CO2 emissions by X kg/year</li>
-              <li>Saves Y kWh of energy annually</li>
-              <li>Equivalent to planting Z trees</li>
+              {product.cosmic_effects && product.cosmic_effects.length > 0 ? (
+                product.cosmic_effects.map((effect, index) => (
+                  <li key={index}>{effect}</li>
+                ))
+              ) : (
+                <li>No known effects... yet.</li>
+              )}
             </ul>
           </div>
         </div>

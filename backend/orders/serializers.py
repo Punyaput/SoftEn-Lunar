@@ -28,7 +28,7 @@ class OrderSerializer(serializers.ModelSerializer):
             'id', 'order_number', 'user', 'status', 'status_display',
             'created_at', 'updated_at', 'shipping_name', 'email',
             'address', 'city', 'zip_code', 'subtotal', 'shipping_cost',
-            'tax', 'sun_points_used', 'discount_from_points', 'total',
+            'tax', 'moon_points_used', 'discount_from_points', 'total',
             'items'
         ]
         read_only_fields = [
