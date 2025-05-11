@@ -1,44 +1,56 @@
-🌑 SoftEn Lunar
-SF222 Software Engineering Models and Analysis – MVC Project
-SoftEn Lunar is a creative e-commerce prototype selling fictional products.
-Built using:
+# 🌑 SoftEn Lunar
 
-🐍 Django (Backend)
+## SF222 Software Engineering Models and Analysis – MVC Project
 
-⚛️ Next.js (Frontend)
+**SoftEn Lunar** is a creative e-commerce prototype selling fictional products.  
+Built using:  
+- 🐍 **Django** (Backend)  
+- ⚛️ **Next.js** (Frontend)  
 
-🧩 MVC Architecture
-Component	Technology Used	Description
-Model	models.py (Django ORM)	Defines data models like Product, using MySQL as the database.
-View	React Components & Pages	The user interface built with Next.js and styled using Tailwind.
-Controller	Django Views / DRF APIs	Handles logic and connects frontend to the backend via RESTful APIs.
+---
 
-⚠️ This project is not ready for production – it's a creative educational skeleton.
+### 🧩 MVC Architecture
 
-🛠️ Local Development Setup
+| Component     | Technology Used               | Description                                                                  |
+|---------------|-------------------------------|------------------------------------------------------------------------------|
+| **Model**     | `models.py` (Django ORM)      | Defines data models like Product, using MySQL as the database.              |
+| **View**      | React Components & Pages      | The user interface built with Next.js and styled using Tailwind.            |
+| **Controller**| Django Views / DRF APIs       | Handles logic and connects frontend to the backend via RESTful APIs.        |
+
+> ⚠️ This project is **not** ready for production – it's a creative educational skeleton.
+
+---
+
+## 🛠️ Local Development Setup
+
 Follow these steps to run the project locally:
 
-1. Clone the repository
+### 1. Clone the repository
+```bash
 git clone https://github.com/Punyaput/SoftEn-Lunar
+```
 
-2. Backend Setup (Python + Django)
-Install dependencies:
+### 2. Backend Setup (Python + Django)
 
+- Install dependencies:
+```bash
 cd backend
 pip install -r requirements.txt
+```
 
-Set up the database:
+- Set up the database:
 
-2.1. Configure the MySQL database
+#### 2.1 Configure the MySQL database
+
 Make sure MySQL is installed and running. Then create a new database for the project:
 
-sql
-Copy code
+```sql
 CREATE DATABASE softenlunar;
-Update the DATABASES configuration in backend/settings.py with your database credentials:
+```
 
-python
-Copy code
+Update the `DATABASES` section in `backend/settings.py`:
+
+```python
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -49,30 +61,51 @@ DATABASES = {
         'PORT': '3306',
     }
 }
-2.2. Load the database schema
-Run migrations to set up the necessary tables:
+```
 
+#### 2.2 Apply Migrations
+
+```bash
 python manage.py migrate
+```
 
-2.3. Optionally, import the initial data (if you have a dump file like data.sql)
-You can import your MySQL dump file to populate the database with sample data:
+#### 2.3 (Optional) Import Sample Data
 
-bash
-Copy code
+If provided, import `data.sql` into your MySQL database:
+
+```bash
 mysql -u your_mysql_user -p softenlunar < path_to_your_dump_file/data.sql
-Run the Django development server:
+```
 
+- Run the Django development server:
+```bash
 python manage.py runserver
+```
 
-3. Frontend Setup (Next.js)
-Install dependencies:
+### 3. Frontend Setup (Next.js)
 
+- Install dependencies:
+```bash
 cd frontend
 npm install
+```
 
-Run the Next.js development server:
-
+- Run the frontend:
+```bash
 npm run dev
+```
 
-4. Access the App
-Visit the app at http://localhost:3000
+### 4. Access the App
+
+Visit [http://localhost:3000](http://localhost:3000)
+
+---
+
+### ⚙️ Troubleshooting
+
+- Ensure MySQL server is running.
+- Confirm your credentials in `settings.py` match your local setup.
+- Ensure the `softenlunar` database exists.
+- If `data.sql` fails to import, double-check the schema compatibility.
+
+---
