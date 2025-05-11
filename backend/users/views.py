@@ -22,11 +22,11 @@ class ClaimMoonPointView(APIView):
         current_hour = timezone.now().hour
         
         # Allow claiming only between 8PM and 9PM
-        if 8 <= current_hour < 9:
+        if 1 <= current_hour < 23:
             claimed, bonus = user.claim_moon_point()
             if claimed:
                 return Response({
-                    'message': f'moon Point claimed! {f"+{bonus} bonus" if bonus else ""}',
+                    'message': f'Moon Point claimed! {f"+{bonus} bonus" if bonus else ""}',
                     'moon_points': user.moon_points,
                     'streak_days': user.streak_days,
                     'bonus': bonus
@@ -50,25 +50,64 @@ from django.contrib.auth.models import User
 from django.contrib.auth.password_validation import validate_password
 from django.core.exceptions import ValidationError
 
+
 @api_view(['POST'])
 @permission_classes([AllowAny])
 def register_user(request):
-    username = request.data.get('username')
-    password = request.data.get('password')
-
-    if not username or not password:
-        return Response({'detail': 'Username and password are required.'}, status=400)
-
-    if CustomUser.objects.filter(username=username).exists():
-        return Response({'detail': 'Username already exists.'}, status=400)
-
     try:
-        validate_password(password)
-    except ValidationError as e:
-        return Response({'detail': e.messages[0]}, status=400)
+        data = request.data
+        username = data.get('username', '').strip()
+        password = data.get('password', '').strip()
 
-    user = CustomUser.objects.create_user(username=username, password=password)
-    return Response({'detail': 'User created successfully.'}, status=201)
+        # Validate input
+        if not username or not password:
+            return Response(
+                {'error': 'Both username and password are required'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        if len(username) < 4:
+            return Response(
+                {'error': 'Username must be at least 4 characters'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        if len(password) < 8:
+            return Response(
+                {'error': 'Password must be at least 8 characters'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        # Validate password complexity
+        try:
+            validate_password(password)
+        except ValidationError as e:
+            return Response(
+                {'error': ' '.join(e.messages)},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        # Create user
+        user = CustomUser.objects.create_user(
+            username=username,
+            password=password
+        )
+
+        return Response(
+            {'success': True, 'message': 'Account created successfully'},
+            status=status.HTTP_201_CREATED
+        )
+
+    except IntegrityError:
+        return Response(
+            {'error': 'Username already exists'},
+            status=status.HTTP_400_BAD_REQUEST
+        )
+    except Exception as e:
+        return Response(
+            {'error': 'An unexpected error occurred'},
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
 
 from rest_framework.permissions import IsAuthenticated
 

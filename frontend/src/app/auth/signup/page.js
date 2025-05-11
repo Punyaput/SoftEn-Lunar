@@ -11,33 +11,60 @@ export default function SignupPage() {
   const [password, setPassword] = useState('');
   const [confirm, setConfirm] = useState('');
   const [error, setError] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSignup = async (e) => {
     e.preventDefault();
     setError('');
+
+    // Client-side validation
+    if (!username || !password || !confirm) {
+      setError('All fields are required');
+      return;
+    }
+
+    if (username.length < 4) {
+      setError('Username must be at least 4 characters');
+      return;
+    }
+
+    if (password.length < 8) {
+      setError('Password must be at least 8 characters');
+      return;
+    }
 
     if (password !== confirm) {
       setError('Passwords do not match');
       return;
     }
 
+    setIsSubmitting(true);
+
     try {
-      const data = await fetchAPI(`/api/users/signup/`, {
+      const response = await fetchAPI('/api/users/signup/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password }),
       });
 
-      console.log(data)
+      const data = await response;
 
-      // Assuming the backend sends a successful response with a message
-      if (data.detail) {
-        router.push('/auth/login');
+      if (data.success) {
+        router.push('/auth/login?signup=success');
       } else {
-        setError(data.message || 'Signup failed');
+        setError(data.message || 'Signup failed unexpectedly.');
       }
-    } catch (error) {
-      setError('Signup failed. Please try again.');
+
+      if (!response.ok) {
+        const serverError = data?.error || data?.detail || 'Signup failed. Please try again.';
+        setError(serverError);
+        return;
+      }
+    } catch (err) {
+      console.error('Signup error:', err);
+      setError('Could not connect to the server. Please try again.');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -48,6 +75,7 @@ export default function SignupPage() {
           <h1>Sign Up</h1>
           <p>Create your SoftEn Lunar account</p>
         </div>
+        
         <form onSubmit={handleSignup} className="auth-options">
           <input
             type="text"
@@ -56,6 +84,7 @@ export default function SignupPage() {
             onChange={(e) => setUsername(e.target.value)}
             required
             className="w-full p-3 border border-gray-300 rounded"
+            minLength={4}
           />
           <input
             type="password"
@@ -64,6 +93,7 @@ export default function SignupPage() {
             onChange={(e) => setPassword(e.target.value)}
             required
             className="w-full p-3 border border-gray-300 rounded"
+            minLength={8}
           />
           <input
             type="password"
@@ -72,16 +102,30 @@ export default function SignupPage() {
             onChange={(e) => setConfirm(e.target.value)}
             required
             className="w-full p-3 border border-gray-300 rounded"
+            minLength={8}
           />
-          {error && <p className="text-red-500 text-sm">{error}</p>}
-          <button type="submit" className="auth-btn primary">
-            Sign Up
+          
+          {error && (
+            <div className="text-red-500 text-sm py-2 px-3 bg-red-50 rounded">
+              {error}
+            </div>
+          )}
+          
+          <button 
+            type="submit" 
+            className="auth-btn primary"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? 'Creating Account...' : 'Sign Up'}
           </button>
         </form>
+        
         <div className="auth-footer mt-4">
           <p>
             Already have an account?{' '}
-            <a href="/auth/login">Log in</a>
+            <a href="/auth/login" className="text-blue-600 hover:underline">
+              Log in
+            </a>
           </p>
         </div>
       </div>

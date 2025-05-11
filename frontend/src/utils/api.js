@@ -1,18 +1,8 @@
 // utils/api.js
 export async function fetchAPI(path, options = {}) {
-    // const isServer = typeof window === 'undefined';
-
-    // const baseURL = process.env.NEXT_PUBLIC_API_BASE_URL || (
-    //   isServer
-    //     ? 'http://backend:8000'  // Docker default
-    //     : 'http://localhost:8000' // Browser fallback for local dev
-    // );
-
     const baseURL = 'http://localhost:8000';
 
     const url = `${baseURL}${path}`;
-    // console.log('🌐 ENV:', process.env.NEXT_PUBLIC_API_BASE_URL);
-    console.log('🌐 Using baseURL:', baseURL);
 
     try {
         const response = await fetch(url, {
